@@ -1,15 +1,102 @@
 package clases;
 
+import javax.swing.*;
 
-	import javax.swing.*;
-	import java.awt.*;
-	import java.awt.event.ActionEvent;
-	import java.awt.event.ActionListener;
+import PatronObserver.*;
 
-	public class Principal extends JFrame {
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+public class Principal extends JFrame implements ActionListener, Observable {
+    private JButton RedButton;
+    private JButton GreenButton;
+    private JButton CyanButton;
+    private Color colorFondo = Color.WHITE;
+    public static ArrayList<Observer> lstObserver = new ArrayList<>(); 
+
+
+    public Principal() {
+        super("Cambiar Color de Fondo");
+        setSize(400, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        RedButton = new JButton("Rojo");
+        GreenButton = new JButton("Verde");
+        CyanButton = new JButton("Azul");
+
+        add(RedButton);
+        add(GreenButton);
+        add(CyanButton);
+
+        RedButton.addActionListener(this);
+        GreenButton.addActionListener(this);
+        CyanButton.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == RedButton) {
+        	
+            colorFondo = Color.RED;
+            notificacionObserver();
+            
+        } else if (e.getSource() == GreenButton) {
+        	
+            colorFondo = Color.GREEN;
+            notificacionObserver();
+            
+        } else if (e.getSource() == CyanButton) {
+        	
+            colorFondo = Color.cyan;
+            notificacionObserver();
+        }
+
+        getContentPane().setBackground(colorFondo);
+        repaint();
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            Principal ventana = new Principal();
+        	CreateObservador observador1 = new CreateObservador();
+	    	CreateObservador observador2 = new CreateObservador();
+            ventana.agregarObserver(observador1);
+            ventana.agregarObserver(observador2);
+            ventana.setVisible(true);
+        });
+    }
+    
+    @Override
+    public void agregarObserver(Observer observer) {
+        lstObserver.add(observer);
+    }
+    
+    @Override
+    public void notificacionObserver() {
+        for (Observer observer : lstObserver) {
+            observer.update(colorFondo);
+        }
+    }
+}
+
+/*
+import javax.swing.*;
+import PatronObserver.*;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+	public class Principal extends JFrame implements Observable{
 	    private JButton boton1;
 	    private JButton boton2;
 	    private JButton boton3;
+	    private Color colorFondo = Color.WHITE;
+	    public static ArrayList<Observer> lstObserver = new ArrayList<>(); 
 
 	    public Principal() {
 	        super("Menu Principal");
@@ -27,7 +114,11 @@ package clases;
 	        boton1.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                // Cambio de color 1
+	            	colorFondo = Color.RED;
+	                //System.out.println("Nuevo color de fondo: Rojo");
+	                getContentPane().setBackground(colorFondo);
+	                repaint();
+	                notificacionObserver();
 	            }
 	        });
 	        
@@ -36,14 +127,22 @@ package clases;
 	        boton2.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                // Acción del botón 2
+	            	colorFondo = Color.cyan;
+	                //System.out.println("Nuevo color de fondo: cyan");
+	                getContentPane().setBackground(colorFondo);
+	                repaint();
+	                notificacionObserver();
 	            }
 	        });
 
 	        boton3.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                // Acción del botón 3
+	            	colorFondo = Color.GREEN;
+//	        		System.out.println("Nuevo color de fondo: " + colorFondo.toString());
+	                getContentPane().setBackground(colorFondo);
+	                repaint();
+	                notificacionObserver();
 	            }
 	        });
 
@@ -54,9 +153,38 @@ package clases;
 	    }
 
 	    public static void main(String[] args) {
+	    	
 	        SwingUtilities.invokeLater(() -> {
+	        	CreateObservador observador1 = new CreateObservador();
+		    	CreateObservador observador2 = new CreateObservador();
+		    	
 	            Principal ventana = new Principal();
+	            ventana.agregarObserver(observador1);
+	            ventana.agregarObserver(observador2);	            
 	            ventana.setVisible(true);
 	        });
+	        
 	    }
+	    
+	    @Override
+	    public void agregarObserver(Observer observer) {
+	        lstObserver.add(observer);
+	    }
+	    
+	    @Override
+	    public void notificacionObserver() {
+	        for (Observer observer : lstObserver) {
+	            observer.update(colorFondo);
+	        }
+	    }
+	    
+	   @Override 
+	   public String toString() {
+		return colorFondo.toString();
+		   
+	   }
+
+
+
 	}
+*/
