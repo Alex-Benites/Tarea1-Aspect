@@ -7,7 +7,7 @@ public interface Observer {
 	
 
 
-	void update(Color color);
+	void update();
 		
 	
 

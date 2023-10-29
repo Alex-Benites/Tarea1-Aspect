@@ -1,35 +1,30 @@
 package clases;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import PatronObserver.Observer;
+import java.awt.Color;
 
-
-// implementacion con Aspectos del Patron Observer
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 
 
-public aspect Notificaction {
-//	private SimpleDateFormat fecha = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
-//	
-//	
-//
-//	pointcut NotificasObser() : call(* com.bettinghouse.BettingHouse.successfulSignUp(..));
-//	
-//	after() returning : NotifciarObserver() {
-//
-//	//	System.out.println("hOLA mUNDO");
-//		}
-//	
-//	
-//	private void recordAction() {
+aspect Notificaction {
 
-//	}
-
-
+	pointcut NumeroObserver() : call(* clases.Principal.notificacionObserver(..));
 	
 
+	 after() returning : NumeroObserver() {
+		 int num = Principal.lstObserver.size();
+		System.out.println("Su numero actual de observadores es de: "+num);
+
+	 }
+	
+	 pointcut AvisoCreacionObserver() : call(* clases.Principal.agregarObserver(..));
+		
+
+	 after() returning : AvisoCreacionObserver() {
+		System.out.println("Se ha agregado un nuevo observer");
+	 }
+    
 }

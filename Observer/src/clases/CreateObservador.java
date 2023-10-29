@@ -3,7 +3,7 @@ package clases;
 import java.awt.Color;
 
 import PatronObserver.Observer;
-
+/*
 public class CreateObservador implements Observer {
 
 	@Override
@@ -25,3 +25,4 @@ public class CreateObservador implements Observer {
     }
 
 }
+*/
