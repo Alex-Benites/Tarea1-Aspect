@@ -10,10 +10,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Principal extends JFrame implements ActionListener, Observable {
-    private JButton RedButton;
-    private JButton GreenButton;
-    private JButton CyanButton;
-    private Color colorFondo = Color.WHITE;
+    public static JButton RedButton;
+    public static JButton GreenButton;
+    public static JButton CyanButton;
+    public static Color colorFondo = Color.WHITE;
     public static ArrayList<Observer> lstObserver = new ArrayList<>(); 
 	static Principal ventana = new Principal();
     public JLabel mensajeLabel = new JLabel("Mensaje: ");
