@@ -10,7 +10,9 @@ import javax.swing.SwingUtilities;
 
 
 aspect Notificaction {
-
+	
+	
+	// Aqui atrapo el metodo agregarObserver
 	pointcut NumeroObserver() : call(* clases.Principal.notificacionObserver(..));
 	
 
@@ -19,7 +21,7 @@ aspect Notificaction {
 		System.out.println("Su numero actual de observadores es de: "+num);
 
 	 }
-	
+	// Aqui atrapo el metodo notificacionObserver
 	 pointcut AvisoCreacionObserver() : call(* clases.Principal.agregarObserver(..));
 		
 
