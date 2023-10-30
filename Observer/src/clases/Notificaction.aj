@@ -20,6 +20,25 @@ import clases.Principal;
 
 aspect Notificaction {
 	
+	pointcut cambioColor(Color col) : call(* setBackground(Color)) && args(col);
+	
+	 after(Color col) returning : cambioColor(col) {
+		System.out.println("El estado de la ventana cambio de color a " + col + ", el dia " + fecha.format(Calendar.getInstance().getTime()));
+		String message = "El estado de la ventana cambio de color a " + col + ", el dia " + fecha.format(Calendar.getInstance().getTime());
+
+		ArchivoEstadoColor(message);
+	 }
+	 
+	public void ArchivoEstadoColor(String message) {
+		File file = new File("estadoColor.txt");
+
+		try (PrintWriter out = new PrintWriter(new FileWriter(file, true))) {	
+			out.println(message);
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	 }
+	
 	private SimpleDateFormat fecha = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
 
 	// Aqui atrapo el metodo agregarObserver

@@ -1,0 +1,15 @@
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=0], el dia dom oct 29 20:02:17 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=255,g=0,b=0], el dia dom oct 29 20:05:22 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=255], el dia dom oct 29 20:05:25 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=0], el dia dom oct 29 20:05:26 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=0], el dia dom oct 29 20:05:56 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=255], el dia dom oct 29 20:05:56 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=0], el dia dom oct 29 20:05:57 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=255], el dia dom oct 29 20:05:58 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=0], el dia dom oct 29 20:05:58 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=255,g=0,b=0], el dia dom oct 29 20:08:04 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=0], el dia dom oct 29 20:08:04 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=255], el dia dom oct 29 20:08:05 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=255,g=0,b=0], el dia dom oct 29 20:08:05 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=0], el dia dom oct 29 20:08:06 COT 2023
+El estado de la ventana cambio de color a java.awt.Color[r=0,g=255,b=255], el dia dom oct 29 20:08:06 COT 2023
