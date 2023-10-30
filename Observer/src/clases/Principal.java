@@ -14,7 +14,7 @@ public class Principal extends JFrame implements ActionListener, Observable {
     public static JButton GreenButton;
     public static JButton CyanButton;
     public static Color colorFondo = Color.WHITE;
-    public static ArrayList<Observer> lstObserver = new ArrayList<>(); 
+    public static ArrayList<Observer> lstObserver = new ArrayList<>();
 	static Principal ventana = new Principal();
     public JLabel mensajeLabel = new JLabel("Mensaje: ");
 
@@ -43,6 +43,7 @@ public class Principal extends JFrame implements ActionListener, Observable {
         if (e.getSource() == RedButton) {
         	
             colorFondo = Color.RED;
+            System.out.println("RED");
             Rojo observador2 = new Rojo();
             ventana.agregarObserver(observador2);
             notificacionObserver();
@@ -51,6 +52,7 @@ public class Principal extends JFrame implements ActionListener, Observable {
         } else if (e.getSource() == GreenButton) {
         	
             colorFondo = Color.GREEN;
+            System.out.println("GREEN");
             Green observador2 = new Green();
             ventana.agregarObserver(observador2);
             notificacionObserver();
@@ -58,6 +60,7 @@ public class Principal extends JFrame implements ActionListener, Observable {
         } else if (e.getSource() == CyanButton) {
         	
             colorFondo = Color.cyan;
+            System.out.println("CYAN");
             Cyan observador2 = new Cyan();
             ventana.agregarObserver(observador2);
             notificacionObserver();

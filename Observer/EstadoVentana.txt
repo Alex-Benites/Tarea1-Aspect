@@ -1,1 +1,4 @@
 
+El estado de la ventana cambio a rojo, el dia dom oct 29 19:16:40 COT 2023
+El estado de la ventana cambio a verde, el dia dom oct 29 19:16:42 COT 2023
+El estado de la ventana cambio a celeste, el dia dom oct 29 19:16:43 COT 2023
